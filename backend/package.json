@@ -1,0 +1,22 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sujithra-dhayalan/QuickBites"
+  },
+  "author": "Sujithra D",
+  "license": "ISC",
+  "description": " A MERN stack web app that helps users find recipes based on ingredients they have at home. Features include ingredient-based recipe search, user-uploaded recipes, and personalized filtering for dietary preferences. Built with MongoDB, Express, React, and Node.js for a seamless and interactive user experience.",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.6.1",
+    "nodemon": "^3.1.4"
+  }
+}
