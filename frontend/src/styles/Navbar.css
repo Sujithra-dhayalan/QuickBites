@@ -1,0 +1,45 @@
+nav{
+    padding: 10px;
+    background-color: #b76a24;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.title{
+    font-family: "Poppins", system-ui;
+    font-size: 30px;
+    color: #470e08;
+    display: flex;
+}
+
+.logo{
+    height: 100px;
+    margin-top: 20px;
+}
+
+.search-bar{
+    margin-top: 50px;
+}
+
+input{
+    height: 20px;
+    padding: 10px;
+    width:200px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border: none;
+    opacity: 0.4;
+    text-decoration: none;
+}
+button{
+    height:40px;
+    padding: 10px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: rgba(184, 48, 48, 0.575);
+    border: none;
+    color: white;
+    cursor: pointer;
+
+}
