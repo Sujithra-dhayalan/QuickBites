@@ -5,6 +5,7 @@ nav{
     justify-content: space-between;
     padding-left: 30px;
     padding-right: 30px;
+    margin-bottom: 20px
 }
 .title{
     font-family: "Poppins", system-ui;

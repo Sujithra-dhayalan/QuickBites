@@ -1,0 +1,13 @@
+h1{
+    text-align: center;
+}
+
+.whole-box{
+    display: flex;
+    justify-content: space-between;
+}
+
+img{
+    height: 200px;
+    border-radius: 10px;
+}

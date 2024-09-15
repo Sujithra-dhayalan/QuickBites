@@ -1,0 +1,38 @@
+*{
+    font-family: "Poppins", system-ui;
+}
+
+.content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.recipe-box{
+    background-color:#d4a67c;
+    width:260px;
+    height: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    position: relative;
+}
+
+.recipe-image{
+    height: 100px;
+    border-radius: 10px;
+}
+
+.recipe-button{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 5px;
+}

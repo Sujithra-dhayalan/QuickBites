@@ -1,13 +1,21 @@
-import React from 'react';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Navbar from './components/Navbar';
- // Adjust path if necessary
+import Recipe from './pages/Recipe';
+import FullRecipe from './pages/FullRecipe';
+
 
 const App = () => {
   return (
-    <div>
+    <>
+    <Router>
       <Navbar />
-      
-    </div>
+      <Routes>
+        <Route path="/" element={<Recipe />} />
+        <Route path="/recipe/:id" element={<FullRecipe/>} />
+      </Routes>
+    </Router>
+    
+    </>
   );
 };
 

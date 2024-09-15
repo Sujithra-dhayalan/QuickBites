@@ -70,4 +70,14 @@ const search_recipe = async (req,res) =>{
     }
 }
 
-module.exports = {add_recipe, get_recipe, search_recipe}
+// for specific recipes {view button}
+const specificRecipe = async (req,res) =>{
+    const recipe = await Recipe.findById(req.params.id)
+
+    if (!recipe){
+        return res.status(404).send({message:'Recipe not found'})
+        res.json({data: recipe});
+    }
+}
+
+module.exports = {add_recipe, get_recipe, search_recipe, specificRecipe}

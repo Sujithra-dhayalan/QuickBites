@@ -10,7 +10,7 @@ const Navbar = ()=>{
 
             </div>
             <form className="search-bar">
-                <input type="text" placeholder="Search recipes by ingredients"/>
+                <input type="text" placeholder="What's in your kitchen?"/>
                 <button>Search</button>
             </form>
         </nav>
