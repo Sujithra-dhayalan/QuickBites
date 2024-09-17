@@ -20,7 +20,7 @@ const Recipe = () => {
             }
         }
         fetchRecipes()
-    }, [])
+    },[])
 
     return (
         <div className='content'>
@@ -32,13 +32,11 @@ const Recipe = () => {
                         <h4>Ingredients: {recipe.ingredients.join(", ")}</h4>
                         <h4>Cooking Time: {recipe.cookingTime} mins</h4>
                         <Link to={`/recipe/${recipe._id}`}>
-                            <button className="recipe-button" >view</button>
+                            <button className="recipe-button" onClick={()=>console.log(`This is the id for this recipe: ${recipe._id}`)}>view</button>
                         </Link>
                     </div>
                 </div>
             ))}
-
-
         </div>
     )
 }

@@ -76,8 +76,9 @@ const specificRecipe = async (req,res) =>{
 
     if (!recipe){
         return res.status(404).send({message:'Recipe not found'})
-        res.json({data: recipe});
+        
     }
+    res.json({data: recipe});
 }
 
 module.exports = {add_recipe, get_recipe, search_recipe, specificRecipe}
