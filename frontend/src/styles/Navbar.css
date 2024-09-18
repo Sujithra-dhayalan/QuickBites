@@ -12,6 +12,8 @@ nav{
     font-size: 30px;
     color: #470e08;
     display: flex;
+    animation: slideCollapseExpand 2s ease-in-out;
+    transform-origin: center;
 }
 
 .logo{
@@ -64,4 +66,19 @@ button{
     display: flex;
     flex-direction: column;
     
+}
+
+@keyframes slideCollapseExpand {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%); /* Start from the left */
+    }
+    50% {
+        opacity: 1;
+        transform: translateX(0) scaleX(0.1); /* Collapse in the middle */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) scaleX(1); /* Expand back to original size */
+    }
 }

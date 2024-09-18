@@ -1,22 +1,19 @@
 *{
     font-family: "Poppins", system-ui;
-
 }
-
-.content{
+.content {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
 }
 
-.recipe-box{
-    background-color:#d4a67c;
-    width:260px;
-    height: 360px;
+.recipe-box {
+    background-color: #d4a67c;
+    width: 260px;
+    height: 400px; /* Slightly increased height */
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between; /* Ensure spacing between image, details, and footer */
     align-items: center;
     padding: 20px;
     border-radius: 20px;
@@ -26,24 +23,56 @@
     position: relative;
 }
 
-.recipe-image{
-    height: 100px;
+.recipe-image {
+    width: 100%; /* Full width for consistency */
+    height: 120px; /* Consistent image height */
     border-radius: 10px;
+    object-fit: cover;
 }
 
-.recipe-button{
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
+.recipe-details {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: auto; /* Ensure content is spaced correctly */
+}
+
+.recipe-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.recipe-footer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; /* Full width footer */
+    align-items: center;
+    margin-top: 20px; /* Ensures buttons are at the bottom */
+}
+
+.recipe-button {
     border-radius: 5px;
+    background-color: #b8492b;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
 }
 
-.like-button{
-    position: absolute;
-    right: 80px;
-    bottom: 36px;
-    border-radius: 50px;
-    width: 35px;
-    font-size: 40px;
+
+
+.like-button {
+    border-radius: 50%;
     background-color: transparent;
+    border: none;
+    font-size: 50px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 45px;
+    right: 80px;
+
 }
+
+

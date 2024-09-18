@@ -1,5 +1,6 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import "../styles/SearchResults.css";
+import bake from '../assets/bake.png'
 
 const SearchResult = () => {
   const location = useLocation();
@@ -21,7 +22,12 @@ const SearchResult = () => {
           </div>
         ))
       ) : (
-        <p>No recipes found</p>
+        <div  className='no-recipes'>
+          <h4>Opsie! We don't have any recipes right now, but you can add it! Come on! </h4>
+          <img src={bake} alt="food" />
+        </div>
+        
+       
       )}
     </div>
   );

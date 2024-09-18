@@ -46,20 +46,24 @@ const Recipe = ({ favourites = [], setFavourites }) => {
             {recipes.map((recipe) => (
                 <div className='recipe-box' key={recipe._id}>
                     <img className='recipe-image' src={recipe.image} alt={recipe.title} />
-                    <div>
+                    <div className='recipe-details'>
                         <h2 className='recipe-title'>{recipe.title}</h2>
                         <p><strong>Ingredients:</strong> {recipe.ingredients.join(', ')}</p>
+                        <p><strong>Dietary Preferences</strong> {recipe.dietaryPreferences}</p>
                         <p><strong>Cooking Time:</strong> {recipe.cookingTime} mins</p>
-                        <buttonc lassName='like-button' onClick={() => handleLike(recipe._id)} style={{ color: favourites.includes(recipe._id) ? 'rgba(184, 48, 48, 0.575)' : 'white' }}>
+                    </div>
+                    <div className='recipe-footer'>
+                        <button className='like-button' onClick={() => handleLike(recipe._id)} style={{ color: favourites.includes(recipe._id) ? 'rgba(184, 48, 48, 0.575)' : 'white' }}>
                             ♥
-                        </buttonc>
-
+                        </button>
+    
                         <button className='recipe-button' onClick={() => navigate(`/recipe/${recipe._id}`)}>View</button>
                     </div>
                 </div>
             ))}
         </div>
     );
+    
 };
 
 export default Recipe;

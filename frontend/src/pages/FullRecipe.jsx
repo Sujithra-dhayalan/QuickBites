@@ -39,7 +39,9 @@ const FullRecipe = () => {
           <p><strong>Ingredients:</strong> {recipe.ingredients.join(", ")}</p>
           <h4>Instruction: </h4>
           <p>{recipe.description}</p>
+          <p><strong>Dietary Preferences</strong> {recipe.dietaryPreferences}</p>
           <p><strong>Cooking Time:</strong> {recipe.cookingTime} mins</p>
+          
         </div>
         <div>
           <img src={recipe.image} alt={recipe.title} />
