@@ -4,9 +4,9 @@ const Add = () => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate('/add-recipe'); // Navigate to the Add Recipe page
+    navigate('/add-recipe'); //redirects to the add post page
   };
-
+  //this is the plus symbol in the right bottom corner of the page
   return (
     <div className="plus" onClick={handleClick}>
       +

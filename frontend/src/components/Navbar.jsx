@@ -15,7 +15,7 @@ const Navbar = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:9000/api/search-recipes', { 
+      const response = await axios.post('http://localhost:9000/api/search-recipes', {
         ingredients: searchQuery.split(',').map(i => i.trim())
       });
       // Navigate to the results page with search results
@@ -32,20 +32,25 @@ const Navbar = () => {
           <h1>QuickBites</h1>
           <img src={logo} alt="logo" className="logo" />
         </div>
-        <form className="search-bar" onSubmit={handleSubmit}>
-          <input 
-            type="text" 
-            placeholder="What's in your kitchen?"
-            value={searchQuery}
-            onChange={handleChange}
-          />
-          <button type="submit">Search</button>
-        </form>
-        <Link to="/favourites">Favorites</Link>
+        <div className='left-navbar'>
+          <form className="search-bar" onSubmit={handleSubmit}>
+            <input
+              type="text"
+              placeholder="What's in your kitchen?"
+              value={searchQuery}
+              onChange={handleChange}
+            />
+            <button type="submit">Search</button>
+          </form>
+          <div>
+          <Link to="/" className='navbar-links'>Recipes</Link>
+            <Link to="/favourites" className='navbar-links'>Favorites</Link>
+            <Link to="/add-recipe" className='navbar-links'>Post</Link>
+          </div>
+        </div>
       </nav>
     </>
   );
 };
 
 export default Navbar;
-    

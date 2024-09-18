@@ -3,10 +3,11 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import "../styles/Recipe.css"
 
-const Recipe = ({ favourites = [], setFavourites }) => { // Default value for favourites
+const Recipe = ({ favourites = [], setFavourites }) => {
     const [recipes, setRecipes] = useState([]);
     const navigate = useNavigate();
 
+    // for fetching the recipe
     useEffect(() => {
         const fetchRecipes = async () => {
             try {
@@ -20,6 +21,7 @@ const Recipe = ({ favourites = [], setFavourites }) => { // Default value for fa
         fetchRecipes();
     }, []);
 
+    // for handling the like
     const handleLike = async (id) => {
         try {
             const response = await axios.post('http://localhost:9000/api/favourites', { recipeId: id });
@@ -27,7 +29,7 @@ const Recipe = ({ favourites = [], setFavourites }) => { // Default value for fa
             if (response.status === 200) {
                 const updatedRecipe = response.data.data;
                 console.log(updatedRecipe)
-                // Ensure favourites is always defined and check if recipe ID is included
+                
                 if (!favourites.includes(id) && updatedRecipe.likes >= 1) {
                     setFavourites([...favourites, id]);
                 }
@@ -46,19 +48,11 @@ const Recipe = ({ favourites = [], setFavourites }) => { // Default value for fa
                     <img className='recipe-image' src={recipe.image} alt={recipe.title} />
                     <div>
                         <h2 className='recipe-title'>{recipe.title}</h2>
-                        <p>
-                            <strong>Ingredients:</strong> {recipe.ingredients.join(', ')}
-                        </p>
-                        <p>
-                            <strong>Cooking Time:</strong> {recipe.cookingTime} mins
-                        </p>
-                        <button
-                            className='like-button'
-                            onClick={() => handleLike(recipe._id)}
-                            style={{color:'red'}}
-                        >
+                        <p><strong>Ingredients:</strong> {recipe.ingredients.join(', ')}</p>
+                        <p><strong>Cooking Time:</strong> {recipe.cookingTime} mins</p>
+                        <buttonc lassName='like-button' onClick={() => handleLike(recipe._id)} style={{ color: favourites.includes(recipe._id) ? 'rgba(184, 48, 48, 0.575)' : 'white' }}>
                             ♥
-                        </button>
+                        </buttonc>
 
                         <button className='recipe-button' onClick={() => navigate(`/recipe/${recipe._id}`)}>View</button>
                     </div>

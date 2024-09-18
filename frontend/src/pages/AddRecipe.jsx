@@ -2,9 +2,12 @@ import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import "../styles/AddRecipe.css"
+import cookie from "../assets/cookie.png"
 
+// efor adding new recipe
 const AddRecipe = () => {
   const [recipe, setRecipe] = useState({
+    // basically empties the form
     title: '',
     ingredients: '',
     description: '',
@@ -12,6 +15,7 @@ const AddRecipe = () => {
     dietaryPreferences: '',
     cookingTime: ''
   });
+
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -24,7 +28,7 @@ const AddRecipe = () => {
     try {
       const response = await axios.post('http://localhost:9000/api/new-recipe', recipe);
       alert(response.data.message);
-      navigate('/'); // Redirect to home or another page after successful submission
+      navigate('/'); //navigates back to the home page
     } catch (error) {
       console.error('Error adding recipe:', error);
       alert('Error adding recipe');
@@ -32,6 +36,12 @@ const AddRecipe = () => {
   };
 
   return (
+    <>
+    <div className='upper-text'>
+    <h4>Don't be shy! Add your recipe </h4>
+    <img src={cookie} className='cookie'/>
+    </div>
+    
     <div className="add-recipe-form">
       <h2>Add New Recipe</h2>
       <form onSubmit={handleSubmit}>
@@ -82,6 +92,7 @@ const AddRecipe = () => {
         <button type="submit">Add Recipe</button>
       </form>
     </div>
+    </>
   );
 };
 

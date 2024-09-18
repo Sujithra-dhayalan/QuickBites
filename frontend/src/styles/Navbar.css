@@ -5,7 +5,7 @@ nav{
     justify-content: space-between;
     padding-left: 30px;
     padding-right: 30px;
-    margin-bottom: 20px
+    margin-bottom: 20px;
 }
 .title{
     font-family: "Poppins", system-ui;
@@ -20,7 +20,8 @@ nav{
 }
 
 .search-bar{
-    margin-top: 50px;
+    margin-top: 30px;
+    margin-bottom: 20px;
 }
 
 input{
@@ -43,4 +44,24 @@ button{
     color: white;
     cursor: pointer;
 
+}
+
+.navbar-links {
+    text-decoration: none;
+    height: 20px;
+    padding: 10px 15px;
+    background-color: rgba(184, 48, 48, 0.575);
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 60px;
+    margin-left: 10px;
+}
+
+.left-navbar{
+    display: flex;
+    flex-direction: column;
+    
 }

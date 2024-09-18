@@ -19,3 +19,13 @@
     border: none;
     color: rgb(176, 37, 37);
   }
+.upper-text{
+  display: flex;
+  justify-content: space-around;
+  margin-left: 20px;
+  width: 280px;
+}
+  .cookie{
+    margin-top: 8px;
+    height: 50px;
+  }

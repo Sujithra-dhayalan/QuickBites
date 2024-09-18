@@ -2,10 +2,14 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import '../styles/Fullrecipe.css'
+
+
 const FullRecipe = () => {
-  const { id } = useParams(); // Get recipe ID from URL params
+  const { id } = useParams(); 
   const [recipe, setRecipe] = useState(null);
 
+
+  // for fetching the particular recipe using _id
   useEffect(() => {
     const fetchRecipe = async () => {
       try {
@@ -19,7 +23,7 @@ const FullRecipe = () => {
     fetchRecipe();
   }, [id]);
 
-  // Render nothing if recipe is null (still fetching)
+  
   if (!recipe) {
     return null;
   }
