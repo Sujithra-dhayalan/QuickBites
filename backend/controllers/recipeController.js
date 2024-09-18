@@ -57,10 +57,12 @@ const search_recipe = async (req,res) =>{
             return ingredients.every(i=>recipeIngredients.includes(i.toLowerCase()))
         })
 
-        res.status(200).json(matchedRecipe)
-        res.send({
-            message: "Recipes that match your ingredients"
+        res.status(200).json({
+             message: "Recipes that match your ingredients",
+             data: matchedRecipe
         })
+        
+        
     }
     catch(error){
         res.status(500).send({
@@ -71,14 +73,54 @@ const search_recipe = async (req,res) =>{
 }
 
 // for specific recipes {view button}
-const specificRecipe = async (req,res) =>{
-    const recipe = await Recipe.findById(req.params.id)
-
-    if (!recipe){
-        return res.status(404).send({message:'Recipe not found'})
-        
+const specific_recipe = async (req, res) => {
+    try {
+      
+      const recipe = await Recipe.findById(req.params.id);
+      if (!recipe) {
+        return res.status(404).json({ message: 'Recipe not found' });
+      }
+      res.json({ data: recipe });
+  
+    } catch (error) {
+      console.error('Error fetching recipe:', error);
+      res.status(500).json({ message: 'Internal server error', error });
     }
-    res.json({data: recipe});
-}
+  };
+  
+ 
+  
 
-module.exports = {add_recipe, get_recipe, search_recipe, specificRecipe}
+// For saving favourites
+const add_to_favourites = async (req, res) => {
+  try {
+      const { recipeId } = req.body;
+      const recipe = await Recipe.findById(recipeId);
+      if (!recipe) {
+          return res.status(404).json({ message: 'Recipe not found' });
+      }
+      recipe.likes += 1;
+      await recipe.save();
+      res.status(200).json({ message: 'Recipe added to favourites', data: recipe });
+  } catch (error) {
+      console.error('Error adding to favourites:', error);
+      res.status(500).send('Internal server error');
+  }
+};
+
+// for fetching favorite recipes
+const get_favourites = async (req, res) => {
+  try {
+    
+    const favouriteRecipes = await Recipe.find({ likes: { $gte: 1 } }); // Fetch recipes with at least one like
+    res.status(200).json({ data: favouriteRecipes });
+      
+  } catch (error) {
+      console.error('Error fetching favourites:', error);
+      res.status(500).send('Internal server error');
+  }
+};
+
+
+
+module.exports = {add_recipe, get_recipe, search_recipe, specific_recipe, add_to_favourites, get_favourites}

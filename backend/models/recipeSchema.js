@@ -22,6 +22,10 @@ const recipeSchema = new mongoose.Schema({
     cookingTime: {
         type: Number
     },
+    likes:{
+        type:Number,
+        default:0
+    },
     Date: {
         type: Date,
         default: Date.now

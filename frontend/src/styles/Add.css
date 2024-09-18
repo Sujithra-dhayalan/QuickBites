@@ -1,0 +1,17 @@
+
+.plus{
+    height: 50px;
+    width: 50px;
+    background-color:#c46251 ;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    color: white;
+    padding-bottom: 10px;
+    cursor: pointer;
+    position: fixed;
+    bottom: 50px;
+    right: 30px;
+}

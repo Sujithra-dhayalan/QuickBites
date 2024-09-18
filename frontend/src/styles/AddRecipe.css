@@ -1,0 +1,21 @@
+.add-recipe-form {
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  .add-recipe-form input,
+  .add-recipe-form textarea,
+  .add-recipe-form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+  }
+
+  textarea{
+    text-decoration: none;
+    background-color: #fce9d9;
+    border: none;
+    color: rgb(176, 37, 37);
+  }

@@ -1,13 +1,26 @@
-h1{
+
+
+.recipe-title{
     text-align: center;
+    color: #a9453a;
 }
 
 .whole-box{
+    margin: 30px;
     display: flex;
     justify-content: space-between;
 }
-
+.words{
+    margin-left: 20px;
+}
 img{
     height: 200px;
     border-radius: 10px;
+}
+
+strong{
+    color:#a9453a;
+}
+p{
+    font-weight: 400;
 }
