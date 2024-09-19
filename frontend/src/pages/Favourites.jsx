@@ -38,6 +38,7 @@ const Favourites = ({ favourites }) => {
                         <p>
                             <strong>Ingredients:</strong> {recipe.ingredients.join(', ')}
                         </p>
+                        <p><strong>Dietary Preferences</strong> {recipe.dietaryPreferences}</p>
                         <p>
                             <strong>Cooking Time:</strong> {recipe.cookingTime} mins
                         </p>

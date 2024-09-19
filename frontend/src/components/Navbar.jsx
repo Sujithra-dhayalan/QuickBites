@@ -18,13 +18,15 @@ const Navbar = () => {
       const response = await axios.post('http://localhost:9000/api/search-recipes', {
         ingredients: searchQuery.split(',').map(i => i.trim())
       });
-      // Navigate to the results page with search results
+      console.log('API response:', response.data);
+      //to navigate to teh search results page
       navigate('/results', { state: { recipes: response.data } });
+
     } catch (error) {
       console.error('Error searching recipes:', error);
     }
   };
-
+  
   return (
     <>
       <nav>

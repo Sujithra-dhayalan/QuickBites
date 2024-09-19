@@ -41,6 +41,12 @@ const Recipe = ({ favourites = [], setFavourites }) => {
         }
     };
 
+    const getShortIngredients = (ingredients, limit = 3) => {
+        return ingredients.length > limit 
+            ? ingredients.slice(0, limit).join(', ') + ', ...'
+            : ingredients.join(', ');
+    };
+
     return (
         <div className='content'>
             {recipes.map((recipe) => (
@@ -48,7 +54,7 @@ const Recipe = ({ favourites = [], setFavourites }) => {
                     <img className='recipe-image' src={recipe.image} alt={recipe.title} />
                     <div className='recipe-details'>
                         <h2 className='recipe-title'>{recipe.title}</h2>
-                        <p><strong>Ingredients:</strong> {recipe.ingredients.join(', ')}</p>
+                        <p><strong>Ingredients:</strong> {getShortIngredients(recipe.ingredients)}</p>
                         <p><strong>Dietary Preferences</strong> {recipe.dietaryPreferences}</p>
                         <p><strong>Cooking Time:</strong> {recipe.cookingTime} mins</p>
                     </div>
